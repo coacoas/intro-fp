@@ -1,0 +1,28 @@
+apply plugin: 'scala'
+
+ext { 
+  versions = [
+    scala: '2.10.3',
+    scalaLib: '2.10',
+    scalaTest: '2.0',
+    scalaCheck: '1.11.3'
+  ]
+}
+
+repositories { 
+  mavenCentral()
+}
+
+dependencies { 
+  runtime     "org.scala-lang:scala-compiler:$versions.scala"
+  compile     "org.scala-lang:scala-library:$versions.scala"
+  testCompile "org.scalatest:scalatest_${versions.scalaLib}:$versions.scalaTest"
+  testCompile "org.scalacheck:scalacheck_${versions.scalaLib}:$versions.scalaCheck"
+}
+
+task wrapper(type: Wrapper) { 
+  gradleVersion = '1.11'
+}
+
+scalaConsole.dependsOn(build)
+
