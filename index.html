@@ -46,15 +46,13 @@
 					<section>
 						<h2>About me</h2>
 						<hr>
-						<h2>Bill Carlson</h2>
+						<h3>Bill Carlson</h3>
 						<ul>
 							<li>Professional Software Developer for almost 20 years</li>
 							<li>Hobby Developer for even longer</li>
 							<li>Java Developer at <a href="http://www.bridgegateintl.com">BridgeGate, Intl.</a></li>
 							<li>Scala/FP Enthusiast</li>
-							<li>Twitter: <a href="http://www.twitter.com/coacoas">@coaocas</a></li>
 						</ul>
-
 					</section>
 					<section>
 						<h2>About you</h2>
@@ -131,7 +129,7 @@
 						<aside class="notes">Demo - Factorial</aside>
 					</section>
 					<section>
-						<h2>Tail Recursion</h2>
+						<h4>Recursion</h4>
 						<div class="fragment">
 						<pre><code data-trim>def fact(n: Int): Int = if (n &lt;= 1) 1 else n * fact(n - 1)
 						</code></pre>
@@ -151,7 +149,10 @@
 						</code></pre>
 						</div>
 						<div class="fragment">
-						<pre><code data-trim>def fact(acc: Int, n: Int): Int = if (n &lt;= 1) acc else fact(n * acc, n - 1)</code></pre>
+                        <h4>Tail Recursion</h4>
+						<pre><code data-trim>def fact(acc: Int, n: Int): Int = 
+  if (n &lt;= 1) acc 
+  else fact(n * acc, n - 1)</code></pre>
 						</div>
 						<div class="fragment">
 						<pre><code data-trim>
@@ -172,14 +173,18 @@
 					</section>
 					<section>
 						<h3>Linked Lists</h3>
-						<p class="fragment">
+						<div class="fragment">
                             <pre><code data-trim>val x = List(3,2,1)  // 3 :: 2 :: 1 :: Nil</code></pre>
+                        </div>
+                        <div class="fragment">
 							<img height="200" src="images/linked-list-1.svg" alt="Linked List 1"/>
-						</p>
-						<p class="fragment">
+						</div>
+						<div class="fragment">
                             <pre><code data-trim>val y = 5 :: 4 :: x</code></pre>
+                        </div>
+                        <div class="fragment">
 							<img height="200" src="images/linked-list-2.svg" alt="Linked List 1"/>
-						</p>
+						</div>
 					</section>
 					<section>
 						<h2>Error handling</h2>
