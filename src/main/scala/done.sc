@@ -70,7 +70,20 @@ object done {
   
   def concat(ls: List[String]) = foldl(ls, "")(_ + _)
                                                   //> concat: (ls: List[String])String
-  
+    def parseInt(s: String): Option[Int] =
+    try {
+      Some(s.toInt)
+    } catch {
+      case e: Exception => None
+    }                                             //> parseInt: (s: String)Option[Int]
+    
+  def parseInt2(s: String): Either[Exception, Int] =
+    try {
+      Right(s.toInt)
+    } catch {
+      case e: Exception => Left(e)
+    }                                             //> parseInt2: (s: String)Either[Exception,Int]
+    
   def foldOpt[A,B](o: Option[A], z: B)(f: A => B): B =
     o match {
       case None => z
